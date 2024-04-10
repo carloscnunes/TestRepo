@@ -1,0 +1,307 @@
+///$tab Main
+SET ThousandSep=',';
+SET DecimalSep='.';
+SET MoneyThousandSep=',';
+SET MoneyDecimalSep='.';
+SET MoneyFormat='€#,##0.00;-€#,##0.00';
+SET TimeFormat='hh:mm:ss';
+SET DateFormat='DD/MM/YYYY';
+SET TimestampFormat='DD/MM/YYYY hh:mm:ss[.fff]';
+SET MonthNames='Jan;Feb;Mar;Apr;May;Jun;Jul;Aug;Sep;Oct;Nov;Dec';
+SET DayNames='Mon;Tue;Wed;Thu;Fri;Sat;Sun';
+SET LongMonthNames='January;February;March;April;May;June;July;August;September;October;November;December';
+SET LongDayNames='Monday;Tuesday;Wednesday;Thursday;Friday;Saturday;Sunday';
+SET FirstWeekDay=0;
+SET BrokenWeeks=1;
+SET ReferenceDay=0;
+SET FirstMonthOfYear=1;
+SET CollationLocale='en-GB';
+
+
+
+SortJobTitle:
+LOAD * INLINE [
+	JobTitle
+ 	CEO
+ 	CFO
+ 	CMO
+];
+
+
+
+
+
+///$tab Orders
+Orders:
+LOAD
+    "Order Number",
+    "Customer Number",
+    "Employee Number",
+    "Order Date",
+    "Invoice Date",
+    "Invoice Number",
+    "Promised Delivery Date"
+FROM [lib://Commercial Insights Space:DataFiles/T_Orders.qvd]
+(qvd);
+
+
+
+
+
+
+
+
+
+
+///$tab Customers
+Customers:
+LOAD
+    Customer,
+    "Customer Number",
+    Address,
+    City,
+    StateProvince,
+    Country,
+    PostalCode,
+    Phone,
+    Fax,
+    "Line of Business",
+    Region,
+    "Region Code",
+    "Base currency"
+FROM [lib://Commercial Insights Space:DataFiles/T_Customers.qvd]
+(qvd);
+
+
+
+
+
+
+
+///$tab Products
+Products:
+LOAD
+    SupplierID,
+    "Item Number",
+    Item_Desc,
+    "Catalog Price",
+    "Unit Cost",
+    "Manufacturer Number",
+    "Product Group",
+    Product,
+    QualRating,
+    SupplierName
+FROM [lib://Commercial Insights Space:DataFiles/T_Products.qvd]
+(qvd);
+
+
+
+
+
+
+
+///$tab OrderLineItems
+OrderLineItems:
+LOAD
+    ". of Days to Ship",
+    GrossSales,
+    "Item Desc",
+    "Item Number",
+    Margin,
+    "Order Number",
+    "Unit Price",
+    Sales*0.40 as Sales,
+    "Sales Qty",
+    "Order Line No",
+    Discount,
+    LineSalesAmount,
+    ProductIDsOrdered,
+    COGS,
+    Promo
+FROM [lib://Commercial Insights Space:DataFiles/T_OrderLineItems.qvd]
+(qvd);
+
+
+
+///$tab Employees
+Employees:
+LOAD
+    OfficeID,
+    "Employee Number",
+    Name,
+    "Distributor ID",
+    JobTitle,
+    Specialty,
+    OfficeAddress,
+    OfficeCity,
+    OfficeCountry,
+    OfficeFax,
+    OfficePhone,
+    OfficePostalCode,
+    OfficeStateProvince
+FROM [lib://Commercial Insights Space:DataFiles/T_Employees.qvd]
+(qvd);
+
+
+
+
+
+///$tab Manufacturers
+Manufacturers:
+LOAD
+    "Manufacturer Number",
+    Manufacturers.Manufacturer,
+    Manufacturers.Address,
+    Manufacturers.City,
+    Manufacturers.StateProvince,
+    Manufacturers.Country,
+    Manufacturers.PostalCode,
+    Manufacturers.Phone,
+    Manufacturers.Fax,
+    Manufacturers.GreenRating
+FROM [lib://Commercial Insights Space:DataFiles/T_Manufacturers.qvd]
+(qvd);
+
+
+///$tab Shipments
+Shipments:
+LOAD
+    "Order Number",
+    "Order Line Number",
+    "Shipment Date"
+FROM [lib://Commercial Insights Space:DataFiles/T_Shipments.qvd]
+(qvd);
+
+
+
+///$tab Product Cost Comparison
+ProductCostComparison:
+LOAD
+    "Item Number",
+    "Orig Unit Cost"
+FROM [lib://Commercial Insights Space:DataFiles/T_ProductCostComparison.qvd]
+(qvd);
+
+
+
+
+///$tab Population
+RegionPopulation:
+LOAD
+    Region,
+    Population
+FROM [lib://Commercial Insights Space:DataFiles/T_Population.qvd]
+(qvd);
+
+
+
+///$tab Promo Data
+if vFY=1 then
+
+Concatenate(OrderLineItems)
+LOAD
+    ". of Days to Ship",
+    GrossSales,
+    "Item Desc",
+    "Item Number",
+    Margin,
+    "Order Number",
+    "Unit Price",
+    Sales,
+    "Sales Qty",
+    "Order Line No",
+    Discount,
+    LineSalesAmount,
+    ProductIDsOrdered,
+    COGS,
+    Promo
+FROM [lib://Commercial Insights Space:DataFiles/T_Promotional Order Line Items.qvd]
+(qvd);
+
+Concatenate(Orders)
+LOAD
+    "Order Number",
+    "Customer Number",
+    "Employee Number",
+    "Order Date",
+    "Invoice Date",
+    "Invoice Number",
+    "Promised Delivery Date"
+FROM [lib://Commercial Insights Space:DataFiles/T_Promotional Orders.qvd]
+(qvd);
+
+Concatenate(Customers)
+LOAD
+    Customer,
+    Cust,
+    Address,
+    City,
+    StateProvince,
+    Country,
+    PostalCode,
+    Phone,
+    Fax,
+    "Line of Business",
+    Region,
+    "Region Code",
+    "Base currency"
+FROM [lib://Commercial Insights Space:DataFiles/T_Promotional Customers.qvd]
+(qvd);
+
+end if;
+
+///$tab Calendar
+[Master Calendar]:
+LOAD
+    "Order Date",
+    "Week",
+    "Year",
+    "Month",
+    "Day",
+    "Weekday",
+    Quarter,
+    "WeekYear"
+FROM [lib://Commercial Insights Space:DataFiles/T_MasterCalendar.qvd]
+(qvd);
+
+
+
+
+///$tab Writeback
+LIB CONNECT TO 'Commercial Insights Space:Order Goal Writeback';
+
+RestConnectorMasterTable:
+SQL SELECT 
+	"$key",
+	"$changedAt",
+	"$changedBy",
+	"$changedByName",
+	"Order Goal"
+FROM JSON (wrap on) "root";
+
+
+[Order Goal logs]:
+LOAD	
+[$key] as "Product Group",
+	timestamp([$changedAt]) as [Record Changed at],
+	[$changedByName] as [Record Changed by],
+	[Order Goal]
+RESIDENT RestConnectorMasterTable;
+
+
+[Order Goal]:
+load Distinct
+"Product Group",
+timestamp(min([Record Changed at])) as [Changed at],
+FirstSortedValue(distinct [Record Changed by],-[Record Changed at]) as [Changed by],
+FirstSortedValue(distinct [Order Goal],-[Record Changed at]) as [Order Target]
+Resident [Order Goal logs]
+Group by "Product Group";
+
+
+
+DROP TABLE RestConnectorMasterTable;
+
+
+///$tab Exit
+Exit Script;
