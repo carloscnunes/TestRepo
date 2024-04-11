@@ -1,7 +1,7 @@
 
 SHEETS
+{"qInfo":{"qId":"pqPKfG","qType":"sheet"},"qMeta":{"title":"Orders Target","description":"","_resourcetype":"app.object","_objecttype":"sheet","id":"pqPKfG","approved":false,"published":true,"owner":"auth0|a08D0000014cc7QIAQ","ownerId":"OlizOiYgbxdh6PUjcTwhhmK_wu3HmLln","createdDate":"2024-04-08T16:14:39.346Z","modifiedDate":"2024-04-11T12:49:24.143Z","publishTime":"2024-04-11T12:49:19.757Z","privileges":["read","publish"]},"qData":[]}
 {"qInfo":{"qId":"9454fa8a-b5ec-4b99-b8d2-ff06a05787bc","qType":"sheet"},"qMeta":{"title":"Home","description":"","_resourcetype":"app.object","_objecttype":"sheet","id":"9454fa8a-b5ec-4b99-b8d2-ff06a05787bc","approved":false,"published":true,"owner":"auth0|c7f2cd839821e1665754d63e419dd87a5166995c26e0ba726200d29814e51244","ownerId":"62974466c186e66a642934e9","createdDate":"2022-10-18T15:48:24.005Z","modifiedDate":"2024-04-10T16:46:29.806Z","publishTime":"2024-04-10T16:46:26.593Z","privileges":["read","publish"]},"qData":[]}
-{"qInfo":{"qId":"pqPKfG","qType":"sheet"},"qMeta":{"title":"Orders Target","description":"","_resourcetype":"app.object","_objecttype":"sheet","id":"pqPKfG","approved":false,"published":true,"owner":"auth0|c7f2cd839821e1665754d63e419dd87a5166995c26e0ba726200d29814e51244","ownerId":"62974466c186e66a642934e9","createdDate":"2024-04-08T16:14:39.346Z","modifiedDate":"2024-04-10T16:22:55.248Z","publishTime":"2024-04-10T16:22:44.995Z","privileges":["read","publish"]},"qData":[]}
 {"qInfo":{"qId":"f47460a1-9732-444f-87db-4bc9ab4bb626","qType":"sheet"},"qMeta":{"title":"Dashboard","description":"","_resourcetype":"app.object","_objecttype":"sheet","id":"f47460a1-9732-444f-87db-4bc9ab4bb626","approved":false,"published":true,"owner":"auth0|c7f2cd839821e1665754d63e419dd87a5166995c26e0ba726200d29814e51244","ownerId":"62974466c186e66a642934e9","createdDate":"2023-10-06T13:54:41.616Z","modifiedDate":"2024-04-10T14:25:18.086Z","publishTime":"2024-04-10T14:25:14.899Z","privileges":["read","publish"]},"qData":[]}
 {"qInfo":{"qId":"ddbc5ffe-66f2-4a68-bbd9-f9bdd2e1a84d","qType":"sheet"},"qMeta":{"title":"Orders Target (1)","description":"","_resourcetype":"app.object","_objecttype":"sheet","id":"ddbc5ffe-66f2-4a68-bbd9-f9bdd2e1a84d","approved":false,"published":false,"owner":"auth0|a08D000000qomNhIAI","ownerId":"K8QmA7iS-1SBxAQYnLFuJvlCeRnXBQCe","createdDate":"2024-04-09T12:11:03.991Z","modifiedDate":"2024-04-10T10:48:55.910Z","privileges":["read","update","delete","publish","change_owner"]},"qData":[]}
 {"qInfo":{"qId":"789a03a0-6fc8-4d04-9d4f-d701f08cc3b0","qType":"sheet"},"qMeta":{"title":"Dashboard (1)","description":"","_resourcetype":"app.object","_objecttype":"sheet","id":"789a03a0-6fc8-4d04-9d4f-d701f08cc3b0","approved":false,"published":false,"owner":"auth0|a08D000000qomNhIAI","ownerId":"K8QmA7iS-1SBxAQYnLFuJvlCeRnXBQCe","createdDate":"2024-03-29T09:37:08.894Z","modifiedDate":"2024-04-09T18:43:06.054Z","privileges":["read","update","delete","publish","change_owner"]},"qData":[]}
@@ -12,6 +12,12 @@ SHEETS
 {"qInfo":{"qId":"d7b542bd-c2b4-47fd-9a5f-f92e175ffc68","qType":"sheet"},"qMeta":{"title":"Report","description":"","_resourcetype":"app.object","_objecttype":"sheet","id":"d7b542bd-c2b4-47fd-9a5f-f92e175ffc68","approved":false,"published":true,"owner":"auth0|c7f2cd839821e1665754d63e419dd87a5166995c26e0ba726200d29814e51244","ownerId":"62974466c186e66a642934e9","createdDate":"2022-10-13T14:23:12.069Z","modifiedDate":"2023-07-13T14:16:11.690Z","publishTime":"2023-07-13T14:16:11.690Z","privileges":["read","publish"]},"qData":[]}
 
 OBJECTS ON SHEETS
+{"name":"ATtRPLt","type":"forms-general","col":0,"row":1,"colspan":14,"rowspan":17,"bounds":{"y":5.555555555555555,"x":0,"width":38.88888888888889,"height":94.44444444444444}}
+{"name":"NusQL","type":"combochart","col":14,"row":1,"colspan":22,"rowspan":17,"bounds":{"y":5.555555555555555,"x":38.88888888888889,"width":61.111111111111114,"height":94.44444444444444}}
+{"name":"Ckg","type":"action-button","col":0,"row":0,"colspan":1,"rowspan":1,"bounds":{"y":0,"x":0,"width":2.7777777777777777,"height":5.555555555555555}}
+{"name":"EPbHmSn","type":"action-button","col":1,"row":0,"colspan":1,"rowspan":1,"bounds":{"y":0,"x":2.7777777777777777,"width":2.7777777777777777,"height":5.555555555555555}}
+{"name":"KRXMVJ","type":"action-button","col":2,"row":0,"colspan":1,"rowspan":1,"bounds":{"y":0,"x":5.555555555555555,"width":2.7777777777777777,"height":5.555555555555555}}
+{"name":"dgUPgpZ","type":"filterpane","col":3,"row":0,"colspan":33,"rowspan":1,"bounds":{"y":0,"x":8.333333333333332,"width":91.66666666666666,"height":5.555555555555555}}
 {"name":"QBDUtd","type":"action-button","col":0,"row":6,"colspan":12,"rowspan":5,"bounds":{"y":33.33333333333333,"x":0,"width":33.33333333333333,"height":27.77777777777778}}
 {"name":"Lwyy","type":"action-button","col":12,"row":6,"colspan":12,"rowspan":5,"bounds":{"y":33.33333333333333,"x":33.33333333333333,"width":33.33333333333333,"height":27.77777777777778}}
 {"name":"hLPLPCv","type":"action-button","col":24,"row":6,"colspan":12,"rowspan":5,"bounds":{"y":33.33333333333333,"x":66.66666666666666,"width":33.33333333333333,"height":27.77777777777778}}
@@ -20,12 +26,6 @@ OBJECTS ON SHEETS
 {"name":"fUNPcy","type":"action-button","col":12,"row":11,"colspan":12,"rowspan":5,"bounds":{"y":61.111111111111114,"x":33.33333333333333,"width":33.33333333333333,"height":27.77777777777778}}
 {"name":"eLVQt","type":"action-button","col":24,"row":11,"colspan":12,"rowspan":5,"bounds":{"y":61.111111111111114,"x":66.66666666666666,"width":33.33333333333333,"height":27.77777777777778}}
 {"name":"rSUCnx","type":"text-image","col":0,"row":0,"colspan":36,"rowspan":6,"bounds":{"y":0,"x":0,"width":100,"height":33.33333333333333}}
-{"name":"ATtRPLt","type":"forms-general","col":0,"row":1,"colspan":14,"rowspan":17,"bounds":{"y":5.555555555555555,"x":0,"width":38.88888888888889,"height":94.44444444444444}}
-{"name":"NusQL","type":"combochart","col":14,"row":1,"colspan":22,"rowspan":17,"bounds":{"y":5.555555555555555,"x":38.88888888888889,"width":61.111111111111114,"height":94.44444444444444}}
-{"name":"Ckg","type":"action-button","col":0,"row":0,"colspan":1,"rowspan":1,"bounds":{"y":0,"x":0,"width":2.7777777777777777,"height":5.555555555555555}}
-{"name":"EPbHmSn","type":"action-button","col":1,"row":0,"colspan":1,"rowspan":1,"bounds":{"y":0,"x":2.7777777777777777,"width":2.7777777777777777,"height":5.555555555555555}}
-{"name":"KRXMVJ","type":"action-button","col":2,"row":0,"colspan":1,"rowspan":1,"bounds":{"y":0,"x":5.555555555555555,"width":2.7777777777777777,"height":5.555555555555555}}
-{"name":"dgUPgpZ","type":"filterpane","col":3,"row":0,"colspan":33,"rowspan":1,"bounds":{"y":0,"x":8.333333333333332,"width":91.66666666666666,"height":5.555555555555555}}
 {"name":"5bc4d232-d860-4941-a605-e9ae9bf41ada","type":"filterpane","col":4,"row":0,"colspan":32,"rowspan":1,"bounds":{"y":0,"x":11.11111111111111,"width":88.88888888888889,"height":5.555555555555555}}
 {"name":"730a6cb6-9cfd-4fae-95a1-bbacb87d7142","type":"kpi","col":0,"row":1,"colspan":6,"rowspan":2,"bounds":{"y":5.555555555555555,"x":0,"width":16.666666666666664,"height":11.11111111111111}}
 {"name":"dd6e098e-6286-4652-b3a2-3b4193268dcb","type":"kpi","col":22,"row":1,"colspan":5,"rowspan":2,"bounds":{"y":5.555555555555555,"x":61.111111111111114,"width":13.88888888888889,"height":11.11111111111111}}
@@ -157,7 +157,7 @@ FIELDS
 {"qName":"Order Number","qCardinal":32294,"qTags":["$numeric","$integer","$key"],"qSrcTables":["Orders","OrderLineItems","Shipments"]}
 {"qName":"Customer Number","qCardinal":683,"qTags":["$numeric","$integer","$key"],"qSrcTables":["Orders","Customers"]}
 {"qName":"Employee Number","qCardinal":108,"qTags":["$numeric","$integer","$key"],"qSrcTables":["Orders","Employees"]}
-{"qName":"Order Date","qCardinal":927,"qTags":["$numeric","$integer","$timestamp","$date","$key"],"qSrcTables":["Orders","Master Calendar","$OFMap Order Date"]}
+{"qName":"Order Date","qCardinal":927,"qTags":["$numeric","$integer","$timestamp","$date","$key"],"qSrcTables":["Orders","Master Calendar","$OFMap Order Date","$OFMap Order Date"]}
 {"qName":"Invoice Date","qCardinal":620,"qTags":["$numeric","$integer","$timestamp","$date"],"qSrcTables":["Orders"]}
 {"qName":"Invoice Number","qCardinal":32294,"qTags":["$numeric","$integer"],"qSrcTables":["Orders"]}
 {"qName":"Promised Delivery Date","qCardinal":614,"qTags":["$numeric","$integer","$timestamp","$date"],"qSrcTables":["Orders"]}
@@ -228,8 +228,8 @@ FIELDS
 {"qName":"Quarter","qCardinal":4,"qTags":["$text","$ascii"],"qSrcTables":["Master Calendar"]}
 {"qName":"WeekYear","qCardinal":136,"qTags":["$text","$ascii"],"qSrcTables":["Master Calendar"]}
 {"qName":"Order Goal","qCardinal":17,"qTags":["$numeric","$integer"],"qSrcTables":["Order Goal logs"]}
-{"qName":"Record Changed at","qCardinal":21,"qTags":["$numeric","$timestamp"],"qSrcTables":["Order Goal logs"]}
-{"qName":"Record Changed by","qCardinal":3,"qTags":["$text","$ascii"],"qSrcTables":["Order Goal logs"]}
+{"qName":"Record Changed at","qCardinal":26,"qTags":["$numeric","$timestamp"],"qSrcTables":["Order Goal logs"]}
+{"qName":"Record Changed by","qCardinal":4,"qTags":["$text","$ascii"],"qSrcTables":["Order Goal logs"]}
 {"qName":"Changed at","qCardinal":1,"qTags":["$numeric","$timestamp"],"qSrcTables":["Order Goal"]}
-{"qName":"Changed by","qCardinal":1,"qTags":["$text","$ascii"],"qSrcTables":["Order Goal"]}
+{"qName":"Changed by","qCardinal":3,"qTags":["$text","$ascii"],"qSrcTables":["Order Goal"]}
 {"qName":"Order Target","qCardinal":10,"qTags":["$numeric","$integer"],"qSrcTables":["Order Goal"]}
